@@ -17,12 +17,10 @@ public class MusicPlayer : MonoBehaviour {
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = splashMusic;
-        audioSource.Play();
-        Invoke("LoadLevel", 5f);
+        audioSource.Play();       
     }
 
-    private void LoadLevel()
-    {
-        SceneManager.LoadScene("Level_01");
-    }
+   
+
+    
 }
