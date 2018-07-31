@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour {
         scoreBoard = GameObject.FindObjectOfType<ScoreBoard>();
 	}
 
-
+//change c
     private void OnParticleCollision(GameObject other)
     {
         GameObject explosionInstance = Instantiate(explosion, transform.position, Quaternion.identity);
