@@ -5,6 +5,8 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
     [Header("General")]
+    [SerializeField] GameObject deathFX;
+    
     [Tooltip("Ship maneuvering speed")] [SerializeField] float moveSpeed = 10f;
     [Tooltip("Horizontal movement range")] [SerializeField] float xClampRange = 6f;
     [Tooltip("Vertical movement range")] [SerializeField] float yClampRange = 3f;  
@@ -17,7 +19,7 @@ public class PlayerController : MonoBehaviour {
     [Tooltip("Nose dipping uo/down while controls pressed")] [SerializeField] float pitchThrow = -25f;    
     [Tooltip("Banking while controls pressed")] [SerializeField] float bankThrow = -45f;
 
-
+    
     float horizontal, vertical;
     float yOffset;
 
@@ -57,5 +59,6 @@ public class PlayerController : MonoBehaviour {
     public void OnPlayerDeath()
     {
         inputEnabled = false;
+        deathFX.SetActive(true);
     }
 }

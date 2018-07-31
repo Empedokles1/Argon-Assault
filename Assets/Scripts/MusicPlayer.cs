@@ -9,8 +9,15 @@ public class MusicPlayer : MonoBehaviour {
     private AudioSource audioSource;
 
     private void Awake()
-    {        
-         DontDestroyOnLoad(this.gameObject);       
+    {    
+        if(FindObjectsOfType<MusicPlayer>().Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }             
     }
 
     private void Start()
