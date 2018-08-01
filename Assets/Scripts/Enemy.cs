@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
     [SerializeField] GameObject explosion;
     [SerializeField] Transform parent;
     [SerializeField] int enemyScore;
+    [SerializeField] int maxHits = 1;
     private ScoreBoard scoreBoard;
    
 
@@ -16,12 +17,21 @@ public class Enemy : MonoBehaviour {
         scoreBoard = GameObject.FindObjectOfType<ScoreBoard>();
 	}
 
-//change c
+
     private void OnParticleCollision(GameObject other)
+    {
+        maxHits--;
+        if(maxHits <= 0)
+        {
+            scoreBoard.ScoreHit(enemyScore);
+            KillEnemy();
+        }       
+    }
+
+    private void KillEnemy()
     {
         GameObject explosionInstance = Instantiate(explosion, transform.position, Quaternion.identity);
         explosionInstance.transform.parent = parent;
-        scoreBoard.ScoreHit(enemyScore);
         Destroy(gameObject);
     }
 

@@ -228,7 +228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
-  enemyScore: 0
+  enemyScore: 4000
+  maxHits: 2
 --- !u!1 &97949291 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1875551938172112, guid: bb7599871142bcd41bace4e2b151829a,
@@ -253,6 +254,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 2
 --- !u!1001 &165809343
 Prefab:
   m_ObjectHideFlags: 0
@@ -411,6 +413,42 @@ GameObject:
   m_PrefabParentObject: {fileID: 1754910023302818, guid: 60f26d6465b822444ab5dadf5986bb35,
     type: 2}
   m_PrefabInternal: {fileID: 374616712}
+--- !u!95 &193787335
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193787334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &193787336
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 193787334}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 7193a615fff17c547b005012bfb01d3c, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 114047672056052028, guid: 7193a615fff17c547b005012bfb01d3c, type: 2}
+    value: {fileID: 193787334}
+  m_ExposedReferences:
+    m_References: []
 --- !u!4 &193787338 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35,
@@ -430,6 +468,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 2
 --- !u!1 &229528573
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +502,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &229528575
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -564,6 +604,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &243155816
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -655,6 +696,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 2
 --- !u!1 &282840810
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,6 +815,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 40000
+  maxHits: 1
 --- !u!1 &339064108
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +917,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &344835009
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +964,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &344835012
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1088,19 +1133,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 612.57776
+      value: 612.5778
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4655758116509614, guid: 60f26d6465b822444ab5dadf5986bb35, type: 2}
       propertyPath: m_LocalRotation.w
@@ -1309,6 +1354,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1001 &386072241
 Prefab:
   m_ObjectHideFlags: 0
@@ -1375,6 +1421,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 282840814}
     m_Modifications:
+    - target: {fileID: 114449718434411058, guid: 5008d4e3832cd8145b854f3a148bf165,
+        type: 2}
+      propertyPath: guns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4666313687804096, guid: 5008d4e3832cd8145b854f3a148bf165, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1407,6 +1458,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1267394560768242, guid: 5008d4e3832cd8145b854f3a148bf165, type: 2}
+      propertyPath: m_Name
+      value: Gun_right
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065553134047926, guid: 5008d4e3832cd8145b854f3a148bf165, type: 2}
+      propertyPath: m_Name
+      value: Gun_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449718434411058, guid: 5008d4e3832cd8145b854f3a148bf165,
+        type: 2}
+      propertyPath: guns.Array.data[0]
+      value: 
+      objectReference: {fileID: 1642488240}
+    - target: {fileID: 114449718434411058, guid: 5008d4e3832cd8145b854f3a148bf165,
+        type: 2}
+      propertyPath: guns.Array.data[1]
+      value: 
+      objectReference: {fileID: 1923734409}
+    - target: {fileID: 1267394560768242, guid: 5008d4e3832cd8145b854f3a148bf165, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1065553134047926, guid: 5008d4e3832cd8145b854f3a148bf165, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5008d4e3832cd8145b854f3a148bf165, type: 2}
   m_IsPrefabParent: 0
@@ -1434,6 +1511,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 20000
+  maxHits: 1
 --- !u!1 &427358505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1607,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 50000
+  maxHits: 2
 --- !u!1 &441925794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,6 +1709,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &446265612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1846,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &500386501
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1902,8 +1983,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 507521561}
   m_LocalRotation: {x: -0, y: -0.39559036, z: -0, w: 0.9184271}
-  m_LocalPosition: {x: -342.7, y: -6.9, z: 23.2}
-  m_LocalScale: {x: 29.640732, y: 9.05907, z: 15.61058}
+  m_LocalPosition: {x: -342.7, y: -9.0300045, z: 23.2}
+  m_LocalScale: {x: 20.221125, y: 6.180164, z: 10.6496525}
   m_Children: []
   m_Father: {fileID: 1495531634}
   m_RootOrder: 14
@@ -1922,6 +2003,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &507521564
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2073,8 +2155,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 549438047}
   m_LocalRotation: {x: -0, y: -0.39559036, z: -0, w: 0.9184271}
-  m_LocalPosition: {x: -375.3, y: -6.899994, z: -48.2}
-  m_LocalScale: {x: 29.640732, y: 9.05907, z: 15.61058}
+  m_LocalPosition: {x: -375.3, y: -9.029999, z: -48.2}
+  m_LocalScale: {x: 20.221125, y: 6.180164, z: 10.6496525}
   m_Children: []
   m_Father: {fileID: 1495531634}
   m_RootOrder: 17
@@ -2093,6 +2175,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &549438050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2180,6 +2263,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &551647928
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2348,6 +2432,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &582483108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,6 +2552,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &599718147
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2558,6 +2644,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 3
 --- !u!4 &605594523 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4666313687804096, guid: 5008d4e3832cd8145b854f3a148bf165,
@@ -2710,6 +2797,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &682961379
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2823,6 +2911,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &685721237
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2952,6 +3041,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 2
 --- !u!1001 &763023083
 Prefab:
   m_ObjectHideFlags: 0
@@ -3214,6 +3304,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &845886251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3247,6 +3338,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &845886253
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3338,6 +3430,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 20000
+  maxHits: 1
 --- !u!1001 &864085138
 Prefab:
   m_ObjectHideFlags: 0
@@ -3567,6 +3660,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &926459974
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,6 +3762,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &934167374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3769,6 +3864,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1001 &946196684
 Prefab:
   m_ObjectHideFlags: 0
@@ -3857,6 +3953,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &953454674
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3986,6 +4083,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &1011414540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4155,6 +4253,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &1034890592
 GameObject:
   m_ObjectHideFlags: 0
@@ -4201,6 +4300,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &1034890595
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4403,6 +4503,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1001 &1083326793
 Prefab:
   m_ObjectHideFlags: 0
@@ -4487,6 +4588,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &1105812789
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4732,6 +4834,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &1176460840
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4823,6 +4926,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 2
 --- !u!1001 &1201929981
 Prefab:
   m_ObjectHideFlags: 0
@@ -4951,6 +5055,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 50000
+  maxHits: 2
 --- !u!1 &1210606926 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd,
@@ -4975,6 +5080,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 20000
+  maxHits: 1
 --- !u!1 &1218933814
 GameObject:
   m_ObjectHideFlags: 0
@@ -5008,6 +5114,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &1218933816
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5203,6 +5310,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 2
 --- !u!1 &1253938494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5229,8 +5337,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1253938494}
   m_LocalRotation: {x: -0, y: -0.39559036, z: -0, w: 0.9184271}
-  m_LocalPosition: {x: -349.7, y: -6.899994, z: -21.1}
-  m_LocalScale: {x: 29.640732, y: 9.05907, z: 15.61058}
+  m_LocalPosition: {x: -349.7, y: -9.029999, z: -21.1}
+  m_LocalScale: {x: 20.221125, y: 6.180164, z: 10.6496525}
   m_Children: []
   m_Father: {fileID: 1495531634}
   m_RootOrder: 16
@@ -5249,6 +5357,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &1253938497
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5329,8 +5438,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1279770685}
   m_LocalRotation: {x: -0, y: -0.39559036, z: -0, w: 0.9184271}
-  m_LocalPosition: {x: -325, y: -6.899994, z: 5}
-  m_LocalScale: {x: 29.640732, y: 9.05907, z: 15.61058}
+  m_LocalPosition: {x: -325, y: -9.029999, z: 5}
+  m_LocalScale: {x: 20.221125, y: 6.180164, z: 10.6496525}
   m_Children: []
   m_Father: {fileID: 1495531634}
   m_RootOrder: 15
@@ -5349,6 +5458,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &1279770688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5521,6 +5631,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 3
 --- !u!1 &1328732293 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1754910023302818, guid: 60f26d6465b822444ab5dadf5986bb35,
@@ -5545,6 +5656,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 1
 --- !u!1 &1388989316
 GameObject:
   m_ObjectHideFlags: 0
@@ -5646,6 +5758,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &1431765577 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1238095480485456, guid: bf374732b0ea2c34daa340dc2de7f746,
@@ -5670,6 +5783,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 3
 --- !u!1 &1453431964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5717,6 +5831,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &1453431967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5872,6 +5987,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &1495531633
 GameObject:
   m_ObjectHideFlags: 0
@@ -5969,8 +6085,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1499559562}
   m_LocalRotation: {x: -0, y: -0.39559036, z: -0, w: 0.9184271}
-  m_LocalPosition: {x: -355.5, y: -6.899994, z: -66.9}
-  m_LocalScale: {x: 29.640732, y: 9.05907, z: 15.61058}
+  m_LocalPosition: {x: -355.5, y: -9.03, z: -66.9}
+  m_LocalScale: {x: 20.221125, y: 6.180164, z: 10.6496525}
   m_Children: []
   m_Father: {fileID: 1495531634}
   m_RootOrder: 18
@@ -5989,6 +6105,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &1499559565
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6067,6 +6184,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 0
+  maxHits: 1
 --- !u!1 &1565397383
 GameObject:
   m_ObjectHideFlags: 0
@@ -6168,6 +6286,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &1577825574 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1238095480485456, guid: bf374732b0ea2c34daa340dc2de7f746,
@@ -6192,6 +6311,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 3
 --- !u!1 &1616143987 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba,
@@ -6216,6 +6336,12 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 1
+--- !u!1 &1642488240 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1267394560768242, guid: 5008d4e3832cd8145b854f3a148bf165,
+    type: 2}
+  m_PrefabInternal: {fileID: 397675500}
 --- !u!1 &1648036185 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1330105141890764, guid: 5f0acb7fcf73f9b43beff0e0f19c45da,
@@ -6240,6 +6366,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 50000
+  maxHits: 2
 --- !u!1 &1692271415
 GameObject:
   m_ObjectHideFlags: 0
@@ -6341,6 +6468,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &1702316834 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1754910023302818, guid: 60f26d6465b822444ab5dadf5986bb35,
@@ -6365,6 +6493,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 1
 --- !u!1001 &1704703870
 Prefab:
   m_ObjectHideFlags: 0
@@ -6528,6 +6657,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &1746192197
 GameObject:
   m_ObjectHideFlags: 0
@@ -6629,6 +6759,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &1747481516 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1249553951781956, guid: 6a7580c2fbbc4fe41947b58d9f7d3f2b,
@@ -6653,6 +6784,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 40000
+  maxHits: 1
 --- !u!1 &1763205586 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1330105141890764, guid: 5f0acb7fcf73f9b43beff0e0f19c45da,
@@ -6677,6 +6809,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 50000
+  maxHits: 2
 --- !u!1 &1782348122 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1074994750746910, guid: 6d7afa73fcb1fce4cb4b65361a29bcbd,
@@ -6701,6 +6834,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 20000
+  maxHits: 1
 --- !u!1 &1801974552
 GameObject:
   m_ObjectHideFlags: 0
@@ -6944,6 +7078,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1001 &1857555052
 Prefab:
   m_ObjectHideFlags: 0
@@ -7108,6 +7243,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!1 &1891202333
 GameObject:
   m_ObjectHideFlags: 0
@@ -7141,6 +7277,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &1891202335
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7400,6 +7537,12 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
+--- !u!1 &1923734409 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1065553134047926, guid: 5008d4e3832cd8145b854f3a148bf165,
+    type: 2}
+  m_PrefabInternal: {fileID: 397675500}
 --- !u!1 &1941977344 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1090395654553690, guid: e14d375f5a36551479fc2f172353b1ba,
@@ -7424,6 +7567,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 0
+  maxHits: 1
 --- !u!1001 &1944668271
 Prefab:
   m_ObjectHideFlags: 0
@@ -7665,8 +7809,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2029146957}
   m_LocalRotation: {x: -0, y: -0.39559036, z: -0, w: 0.9184271}
-  m_LocalPosition: {x: -304.8, y: -6.899994, z: -13.3}
-  m_LocalScale: {x: 29.640732, y: 9.05907, z: 15.61058}
+  m_LocalPosition: {x: -304.8, y: -9.029999, z: -13.3}
+  m_LocalScale: {x: 20.221125, y: 6.180164, z: 10.6496525}
   m_Children: []
   m_Father: {fileID: 1495531634}
   m_RootOrder: 20
@@ -7685,6 +7829,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &2029146960
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7883,8 +8028,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2055176308}
   m_LocalRotation: {x: -0, y: -0.39559036, z: -0, w: 0.9184271}
-  m_LocalPosition: {x: -328.8, y: -6.899994, z: -38.7}
-  m_LocalScale: {x: 29.640732, y: 9.05907, z: 15.61058}
+  m_LocalPosition: {x: -328.8, y: -9.029999, z: -38.7}
+  m_LocalScale: {x: 20.221125, y: 6.180164, z: 10.6496525}
   m_Children: []
   m_Father: {fileID: 1495531634}
   m_RootOrder: 19
@@ -7903,6 +8048,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 15000
+  maxHits: 3
 --- !u!23 &2055176311
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8037,6 +8183,7 @@ MonoBehaviour:
   explosion: {fileID: 1632922190606696, guid: b4f65b6a89d92264a92543ab8057d54c, type: 2}
   parent: {fileID: 493648370}
   enemyScore: 10000
+  maxHits: 3
 --- !u!1001 &2142257245
 Prefab:
   m_ObjectHideFlags: 0

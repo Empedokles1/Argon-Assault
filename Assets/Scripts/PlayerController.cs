@@ -6,6 +6,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class PlayerController : MonoBehaviour {
     [Header("General")]
     [SerializeField] GameObject deathFX;
+    [SerializeField] GameObject[] guns;
     
     [Tooltip("Ship maneuvering speed")] [SerializeField] float moveSpeed = 10f;
     [Tooltip("Horizontal movement range")] [SerializeField] float xClampRange = 6f;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour {
         {
             ProcessTranslation();
             ProcessRotation();
+            ProcessFiring();
         }
     }
 
@@ -55,10 +57,30 @@ public class PlayerController : MonoBehaviour {
         float roll = horizontal * bankThrow;
         transform.localRotation = Quaternion.Euler(pitch,yaw,roll);
     }
-    
+
+    void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire1"))
+        {
+            foreach (GameObject gun in guns)
+            {
+                gun.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (GameObject gun in guns)
+            {
+                gun.SetActive(false);
+            }
+        }
+    }
+
     public void OnPlayerDeath()
     {
         inputEnabled = false;
         deathFX.SetActive(true);
     }
+
+    
 }
